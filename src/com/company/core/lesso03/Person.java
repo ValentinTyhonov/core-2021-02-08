@@ -1,6 +1,8 @@
-package com.company.core.lesso02;
+package com.company.core.lesso03;
 
-public class Person
+import java.util.Objects;
+
+public abstract class Person
 {
     private String name;
     private String surname;
@@ -56,7 +58,42 @@ public class Person
         return age >= 18;
     }
 
-    private String test() {
-        return "";
+    public String test() {
+        return "232234";
     }
+
+    public String test(String s) {
+        return s + "232234";
+    }
+
+    public int test(int s) {
+        return s;
+    }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o)
+        {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass())
+        {
+            return false;
+        }
+        Person person = (Person) o;
+        return age == person.age && Objects.equals(name, person.name) && Objects.equals(surname, person.surname);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(name, surname, age);
+    }
+
+    public static void say(String some) {
+        System.out.println(some);
+    }
+
+    public abstract void hello();
 }
