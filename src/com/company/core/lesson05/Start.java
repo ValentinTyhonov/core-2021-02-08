@@ -50,7 +50,8 @@ public class Start
             System.out.println("1. sd");
             System.out.println("2. dd");
             System.out.println("3. fd");
-            System.out.println("Make you choice: ");
+            System.out.println("Make you chnfgndgmnndfgn dghfxmndfgscm dgfhzcngdfgcn " +
+                "dfghxcnm dfgxc nmdghfcoice: ".concat("wevwev"));
             choice = scanner.next();
 
             switch (Integer.parseInt(choice)) {

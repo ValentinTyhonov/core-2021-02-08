@@ -1,5 +1,7 @@
 package com.company.core.lesson05;
 
+import java.io.IOException;
+
 import com.company.core.lesso03.Engine;
 import com.company.core.lesso03.Passanger;
 
@@ -9,7 +11,9 @@ public class Car
     private Engine engine;
     private Passanger[] passangers;
 
-    Car(String model, Engine engine) {
+    Car(String model,
+        Engine engine) {
+
         this.engine = engine;
         this.model = model;
     }
@@ -44,7 +48,16 @@ public class Car
         this.passangers = passangers;
     }
 
-    public void drive(TrafficSignals signal) {
+    /**
+     * qewqrqewqewqewvq3
+     * qebveqsveqw
+     * qrrwq
+     * @param signal - aa
+     * @return sdsdasdqsdsd
+     * @throws IOException -
+     */
+    public void drive(TrafficSignals signal)
+    {
         if (signal.equals(TrafficSignals.RED)) {
             System.out.println("go");
         }
