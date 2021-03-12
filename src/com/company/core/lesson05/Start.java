@@ -54,17 +54,20 @@ public class Start
                 "dfghxcnm dfgxc nmdghfcoice: ".concat("wevwev"));
             choice = scanner.next();
 
-            switch (Integer.parseInt(choice)) {
-                case 1: {
+            switch (choice) {
+                case "1": {
                     System.out.println("Hello");
                     break;
                 }
-                case 2: {
+                case "2": {
                     System.out.println("World");
                     break;
                 }
-                default: {
+                case "exit": {
                     return;
+                }
+                default: {
+                    System.out.println("hello");
                 }
             }
         }
