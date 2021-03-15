@@ -48,23 +48,22 @@ public class Start
         //System.out.println(device);
         //System.out.println(device.getTotalPrice());
 
-
-        //Constructor constructor = deviceClass.getConstructor(new Class[]{String.class});
-        // витягнути конструктор з індексом 3 (зі всіма полями) і створити об'єкт класу використовуючи цей конструктор
-        Constructor constructor = deviceClass.getConstructors()[3];
-        Device device1 = (Device) constructor.newInstance("TV", 102, 152.23, 10);
-        System.out.println(device1);
-
-        // витягнути приватне поле name і змінити його значення в об'єкті device1 на club
+        // витягнути приватне поле name і змінити його значення в об'єкті device на club
         Field privateField = deviceClass.getDeclaredField("name");
-        privateField.set(device1, "club");
+        privateField.setAccessible(true);
+        privateField.set(device, "club");
 
         // перевірити чи поле є публічним
-        Modifier.isPublic(privateField.getModifiers());
+        System.out.println(Modifier.isPublic(privateField.getModifiers()));
 
-        // витягнути protected метод getTotalPrice і викликати його з об'єкту device1 з параметром null
+        // витягнути protected метод getTotalPrice і викликати його з об'єкту device з параметром null
         Method methodGetTotalPrice = deviceClass.getDeclaredMethod("getTotalPrice", null);
-        System.out.println(methodGetTotalPrice.invoke(device1, null));
+        System.out.println(methodGetTotalPrice.invoke(device, null));
+
+        // витягнути масив публічних внутрішніх класів
+        System.out.println(Arrays.toString(Item.class.getClasses()));
+        // витягнути масив всіх внутрішніх класів
+        System.out.println(Arrays.toString(Item.class.getDeclaredClasses()));
 
 
     }
