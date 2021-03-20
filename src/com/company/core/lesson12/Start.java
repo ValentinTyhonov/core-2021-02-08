@@ -3,6 +3,7 @@ package com.company.core.lesson12;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 
 import com.company.core.lesson11.Device;
 
