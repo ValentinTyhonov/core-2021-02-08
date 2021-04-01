@@ -16,22 +16,22 @@ public class DirectThread extends Thread
     @Override
     public void run()
     {
-            for (int elem : numbers)
+        for (int elem : numbers)
+        {
+            if (!isInterrupted())
             {
-                if (!isInterrupted())
-                {
-                    System.out.println(getName() + ": " + elem);
+                System.out.println(getName() + ": " + elem);
 
-                    try
-                    {
-                        sleep(timeout);
-                    }
-                    catch (InterruptedException e)
-                    {
-                        e.printStackTrace();
-                        break;
-                    }
+                try
+                {
+                    sleep(timeout);
+                }
+                catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                    break;
                 }
             }
+        }
     }
 }

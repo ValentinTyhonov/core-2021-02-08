@@ -46,14 +46,9 @@ public class Start
             }
         };
 
-        Collections.sort(new ArrayList<Person>(), new Comparator<Person>()
-            {
-                @Override
-                public int compare(Person o1, Person o2)
-                {
-                    return 0;
-                }
-            });
+        Collections.sort(new ArrayList<Person>(), (o1, o2) -> {
+            return o1.getName().compareTo(o2.getName());
+        });
 
             Person.StaticComparator staticComparator = new Person.StaticComparator();
 

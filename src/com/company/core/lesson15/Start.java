@@ -1,6 +1,8 @@
 package com.company.core.lesson15;
 
 import java.util.Arrays;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Start
 {
@@ -23,5 +25,16 @@ public class Start
         directThread1.interrupt();
 
         directThread3.start();
+
+//        ExecutorService service = Executors.newFixedThreadPool(3);
+//        service.execute(new DirectRunnable(Arrays.asList(1, 2, 4), 3000));
+//        service.execute(new DirectRunnable(Arrays.asList(1, 2, 4), 34000));
+//        service.execute(new DirectRunnable(Arrays.asList(1, 2, 4), 9000));
+//        service.execute(new DirectRunnable(Arrays.asList(1, 2, 4), 3000));
+//        service.execute(new DirectRunnable(Arrays.asList(1, 2, 4), 3000));
+//        service.execute(new DirectRunnable(Arrays.asList(1, 2, 4), 3000));
+//        service.execute(new DirectRunnable(Arrays.asList(1, 2, 4), 3000));
+//        service.execute(new DirectRunnable(Arrays.asList(1, 2, 4), 3000));
+//        service.execute(new DirectRunnable(Arrays.asList(1, 2, 4), 3000));
     }
 }
