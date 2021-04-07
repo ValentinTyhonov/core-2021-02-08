@@ -22,7 +22,7 @@ public class OptionalTask
 
         list.forEach(person -> {
             Optional<Person> optionalPerson = Optional.ofNullable(person);
-
+            optionalPerson.map(p -> p.setAge(10));
         });
 
 

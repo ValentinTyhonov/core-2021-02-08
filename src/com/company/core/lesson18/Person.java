@@ -30,9 +30,10 @@ public class Person
         return name;
     }
 
-    public void setName(String name)
+    public Person setName(String name)
     {
         this.name = name;
+        return this;
     }
 
     public int getAge()
@@ -40,8 +41,9 @@ public class Person
         return age;
     }
 
-    public void setAge(int age)
+    public Person setAge(int age)
     {
         this.age = age;
+        return this;
     }
 }

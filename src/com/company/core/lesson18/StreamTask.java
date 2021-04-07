@@ -1,5 +1,6 @@
 package com.company.core.lesson18;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -8,7 +9,7 @@ public class StreamTask
 {
     public static void main(String[] args) throws Exception
     {
-        List<String> strings = Arrays.asList("One", "Two", "Three", "Four", "Five", "One");
+        List<String> strings = new ArrayList<>(Arrays.asList("One", "Two", "Three", "Four", "Five", "One"));
 
         System.out.println(strings);
 
@@ -25,7 +26,9 @@ public class StreamTask
 
 //        Повернути останній елемент колекції або «empty», якщо колекція порожня
         System.out.println("Повернути останній елемент колекції або «empty», якщо колекція порожня");
-        String last = strings.stream().skip(strings.size() - 1).findFirst().orElse("empty");
+        String last = strings.stream()
+            .reduce((s1, s2) -> s1 + s2)
+            .orElse("empty");
         System.out.println(last);
 
 //        Знайти елемент в колекції рівний «Three» або кинути помилку
@@ -66,9 +69,11 @@ public class StreamTask
             .allMatch(elem -> elem.contains("o") || elem.contains("O"));
         System.out.println(allO);
 
+        List<String> backup = new ArrayList<>();
 //        Додати "_1" до кожного елементу колекції
         System.out.println("Додати \"_1\" до кожного елементу колекції");
         List<String> upd = strings.stream()
+            .peek(elem -> backup.add("elem_" + elem))
             .map(elem -> elem + "_1")
             .collect(Collectors.toList());
         System.out.println(upd);
